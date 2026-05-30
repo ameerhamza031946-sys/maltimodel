@@ -80,7 +80,7 @@ best_model, scaler, model_cols = load_models()
 
 # Sidebar Navigation
 st.sidebar.title("📶 Navigation")
-page = st.sidebar.radio("Go to", ["Home", "Dataset Overview", "EDA Dashboard", "Model Comparison", "Churn Prediction", "Project Information"])
+page = st.sidebar.radio("Go to", ["Home", "Dataset Overview", "EDA Dashboard", "Model Comparison", "Churn Prediction"])
 
 # Home Page
 if page == "Home":
@@ -300,25 +300,4 @@ elif page == "Churn Prediction":
             risk_level = "High" if probability > 0.7 else "Medium" if probability > 0.4 else "Low"
             st.metric("Risk Level", risk_level)
 
-# Project Information Page
-elif page == "Project Information":
-    st.title("ℹ️ Project Information")
-    st.write("This application was built as part of the Multi-Model Machine Learning Comparison & Streamlit Dashboard project.")
-    
-    st.markdown("""
-    ### Deployment Instructions
-    **Option 1: Streamlit Community Cloud**
-    1. Push this repository to GitHub.
-    2. Go to [share.streamlit.io](https://share.streamlit.io).
-    3. Click 'New app'.
-    4. Select your repository, branch, and `app.py`.
-    5. Click 'Deploy'.
-    
-    **Option 2: Render**
-    1. Create an account on Render.
-    2. Click 'New Web Service'.
-    3. Connect your GitHub repository.
-    4. Set Build Command: `pip install -r requirements.txt`.
-    5. Set Start Command: `streamlit run app.py --server.port $PORT`.
-    6. Click 'Create Web Service'.
-    """)
+
